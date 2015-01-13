@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
+// Is this really needed?
 public class PlantItEditorWindow : EditorWindow
 {
     [MenuItem("PlantIt/PlantIt-Editor")]
