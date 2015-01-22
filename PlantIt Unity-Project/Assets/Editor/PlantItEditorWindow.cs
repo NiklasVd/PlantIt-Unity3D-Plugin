@@ -45,11 +45,21 @@ public class PlantItEditorWindow : EditorWindow
 
         GUILayout.Space(5);
         GUILayout.Label("Create a new PlantIt-Unit that defines a new area containing PlantIt-Objects.", EditorStyles.boldLabel);
-        if (GUILayout.Button("Create PlantIt-Object"))
+        if (GUILayout.Button("Create PlantIt-Unit"))
         {
             GameObject newPlantItUnitGo = (GameObject)Instantiate(new GameObject(), Vector3.zero, Quaternion.identity);
             newPlantItUnitGo.name = "New PlantIt-Unit";
             newPlantItUnitGo.AddComponent<PlantItUnit>();
+        }
+
+        GUILayout.Space(5);
+        GUILayout.Label("Create a new PlantIt-Behaviour that defines the planting behaviour for PlantIt-Units.", EditorStyles.boldLabel);
+        if (GUILayout.Button("Create PlantIt-Behaviour"))
+        {
+            ScriptableObject asset = ScriptableObject.CreateInstance(typeof(PlantItBehaviour));
+            AssetDatabase.CreateAsset(asset, "Assets/Resources/PlantIt/Behaviours/New PlantIt-Behaviour.asset");
+            EditorUtility.FocusProjectWindow();
+            Selection.activeObject = asset;
         }
     }
 }

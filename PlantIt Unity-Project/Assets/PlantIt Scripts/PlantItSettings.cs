@@ -17,5 +17,6 @@ public class PlantItSettings : ScriptableObject
     }
     private static PlantItSettings _Current;
 
-    public bool drawPlantRangeSpheresGizmos;
+    public string behavioursResourceFolderPath = "PlantIt/Behaviours", plantsResourceFolderPath = "PlantIt/Plants";
+    public bool drawPlantRangeSpheresGizmos, drawPlantsGrowthValueGizmos;
 }
