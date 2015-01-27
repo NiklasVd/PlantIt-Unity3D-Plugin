@@ -40,7 +40,7 @@ public class PlantItObject : ScriptableObject
     public GameObject PlantNew(Transform plantunittransform, Vector3 plantposition, Quaternion plantrotation)
     {
         GameObject instantiatedPlantObject = (GameObject)Instantiate(plantObject, plantposition, Quaternion.identity);
-        instantiatedPlantObject.hideFlags = HideFlags.HideInHierarchy; // Is this needed? Probably only blocks additional editing of the plants...
+        //instantiatedPlantObject.hideFlags = HideFlags.HideInHierarchy; // Is this needed? Probably only blocks additional editing of the plants...
 
         instantiatedPlantObject.transform.parent = plantunittransform;
         instantiatedPlantObject.transform.rotation = plantrotation;
@@ -79,10 +79,4 @@ public class PlantItObject : ScriptableObject
             } 
         }
     }
-}
-
-[Serializable]
-public class PlantItObjectUnitInstance
-{
-
 }
